@@ -7,6 +7,10 @@ ENV SRC_EXTENSIONS_DIR=/srv/app/src_extensions
 # Install packages needed by the dev requirements
 RUN apk add --no-cache libffi-dev
 
+# Install packages for M1 (without them, installing Pillow will fail)
+RUN apk --update add libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc openssl-dev curl
+RUN apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
+
 # Install CKAN dev requirements
 RUN pip3 install -r https://raw.githubusercontent.com/ckan/ckan/${GIT_BRANCH}/dev-requirements.txt
 
