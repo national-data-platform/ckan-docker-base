@@ -39,10 +39,6 @@ RUN  cd ${APP_DIR}/src && \
      #pip3 install --no-cache-dir -r requirements.txt
      pip3 install --no-cache-dir -r  https://raw.githubusercontent.com/ckan/datapusher/${DATAPUSHER_VERSION}/requirements.txt
 
-# FOR M1:
-#RUN  cd ${APP_DIR}/src && \
-#     pip3 install flask==2.1.3 Werkzeug==2.2.2 \
-
 # Install packages for M1
 # Note: in order for TARGETPLATFORM variable to be accesible, the following might be needed:
 # export DOCKER_BUILDKIT=1
